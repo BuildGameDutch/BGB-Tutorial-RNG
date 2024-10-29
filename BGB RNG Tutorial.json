@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 213,
+    "build": 217,
     "major": 5,
     "minor": 4,
     "revision": 0
@@ -113,6 +113,15 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/b81b0bcafdd4279f3bf8d4d3865f51b9961292dad8b5ccbe88807c8acfb6b11d_Poppins-Medium.ttf",
           "name": "Poppins-Medium.ttf"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "default_bg_sm.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "default_bg_sm.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -198,6 +207,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "Background Image",
+          "name": "BGImage",
+          "persistentUuid": "e6c8b2f1-a2d5-4934-9974-868a685c7195",
+          "width": 0,
+          "x": 0,
+          "y": 0,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -238,6 +263,7 @@
             "text": "00",
             "font": "",
             "textAlignment": "center",
+            "verticalTextAlignment": "top",
             "characterSize": 80,
             "color": "0;0;0"
           }
@@ -308,6 +334,7 @@
                 "text": "Roll D100",
                 "font": "Poppins-Medium.ttf",
                 "textAlignment": "center",
+                "verticalTextAlignment": "top",
                 "characterSize": 60,
                 "color": "117;42;0"
               }
@@ -361,9 +388,70 @@
             "text": "Press Spacebar to roll D6",
             "font": "",
             "textAlignment": "left",
+            "verticalTextAlignment": "top",
             "characterSize": 50,
             "color": "0;0;0"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "BGImage",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "default_bg_sm.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 1280,
+                            "y": 0
+                          },
+                          {
+                            "x": 1280,
+                            "y": 720
+                          },
+                          {
+                            "x": 0,
+                            "y": 720
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -377,6 +465,9 @@
           },
           {
             "objectName": "InstructionText"
+          },
+          {
+            "objectName": "BGImage"
           }
         ]
       },
@@ -448,6 +539,39 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
+          "name": "Background Image",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
           "name": "",
           "renderingType": "",
           "visibility": true,
@@ -483,6 +607,10 @@
         }
       ],
       "behaviorsSharedData": [
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
         {
           "name": "Effect",
           "type": "EffectCapability::EffectBehavior"
@@ -3123,6 +3251,7 @@
                 "text": "Text",
                 "font": "",
                 "textAlignment": "",
+                "verticalTextAlignment": "top",
                 "characterSize": 20,
                 "color": "0;0;0"
               }
